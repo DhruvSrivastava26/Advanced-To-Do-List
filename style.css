@@ -1,0 +1,226 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  transition: background 0.3s;
+}
+
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: #007bff;
+  color: white;
+}
+
+.js-theme-toggle {
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: white;
+}
+
+.todo-container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+.todo-grid,
+.todo-input-grid{
+  display: grid;
+  grid-template-columns: 200px 150px 100px 100px;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: center;
+}
+
+.todo-input-grid{
+  margin-bottom: 10px;
+  align-items: stretch;
+}
+
+.name-input,
+.due-date-input{
+  font-size: 15px;
+  padding: 6px;
+}
+
+.add-todo-button{
+  background-color: green;
+  color: white;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+.delete-todo-button{
+  background-color: darkred;
+  color: white;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.completed-task{
+  text-decoration: line-through;
+  color:gray
+}
+
+.filter-buttons {
+  margin: 15px 0;
+}
+
+.filter-buttons button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.filter-buttons .active {
+  background: #007bff;
+  color: white;
+}
+
+.stats {
+  margin-bottom: 10px;
+}
+
+.overdue-task {
+  color: red;
+  font-weight: bold;
+}
+
+.tag {
+  font-size: 12px;
+  background: #e0e0e0;
+  padding: 2px 6px;
+  margin-left: 6px;
+  border-radius: 4px;
+  color: #333;
+}
+
+.todo-stats {
+  margin: 10px 0;
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+
+/* Tablets (width ≤ 768px) */
+@media (max-width: 768px) {
+
+  .todo-container {
+    padding: 15px;
+  }
+
+  .todo-input-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .todo-input-grid button {
+    grid-column: span 2;
+  }
+
+  .todo-grid {
+    grid-template-columns: 30px 1fr 120px 80px;
+  }
+
+  .filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .todo-stats {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+/* Mobile devices (width ≤ 480px) */
+@media (max-width: 480px) {
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .todo-input-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .todo-grid {
+    grid-template-columns: 25px 1fr;
+    row-gap: 8px;
+  }
+
+  .todo-grid div,
+  .todo-grid button {
+    grid-column: span 2;
+  }
+
+  .delete-todo-button {
+    width: 100%;
+  }
+
+  .filter-buttons {
+    justify-content: center;
+  }
+
+  .filter-buttons button {
+    flex: 1;
+  }
+}
+
+.todo-grid > * {
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* Smooth checkbox toggle */
+.completed-task {
+  transition: all 0.3s ease;
+}
+
+/* Button hover animation */
+.add-todo-button,
+.delete-todo-button,
+.filter-buttons button {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.add-todo-button:hover,
+.delete-todo-button:hover,
+.filter-buttons button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+

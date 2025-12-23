@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>TODO LIST</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+  <header class="header">
+    <h1>Todo Dashboard</h1>
+    <button class="theme-toggle js-theme-toggle">🌙</button>
+  </header>
+
+  <div class="todo-container">
+
+    <div class="todo-input-grid">
+      <input placeholder="Todo name" class="js-name-input name-input">
+      <input type="date" class="js-dueDate-input due-date-input">
+      <input placeholder="Tag(Optional)" class="js-tag-input">
+      <button class="add-todo-button js-add-todo-button">Add</button>
+    </div>
+  
+    <div class="filter-buttons">
+      <button class="js-filter-button active" data-filter="all">All</button>
+      <button class="js-filter-button" data-filter="active">Active</button>
+      <button class="js-filter-button" data-filter="completed">Completed</button>
+    </div>
+  
+    <div class="todo-stats">
+      <span>Total: <b class="js-total-count">0</b></span>
+      <span>Active: <b class="js-active-count">0</b></span>
+      <span>Completed: <b class="js-completed-count">0</b></span>
+    </div>
+  
+  
+    <div class="js-todo-list todo-grid"></div>
+
+  </div>
+
+
+  
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
